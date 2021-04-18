@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.sparkjava:spark-core:2.9.3'
+    compile 'org.slf4j:slf4j-simple:2.0.0-alpha1'
+    compile 'org.mongodb:mongo-java-driver:3.8.2'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'io.github.cdimascio:dotenv-java:2.2.0'
+    testCompile 'junit:junit:4.13.2'
+}
+
+test {
+    useJUnitPlatform()
+    beforeTest { descriptor -> logger.lifecycle("Running Test: "+descriptor)}
+    failFast = true //task failed on the first fail test
+}
+
+applicationName = "radiological-api"
+mainClassName = 'sot.thanos.Server'
+task stage(dependsOn: ['clean', 'installDist'])
