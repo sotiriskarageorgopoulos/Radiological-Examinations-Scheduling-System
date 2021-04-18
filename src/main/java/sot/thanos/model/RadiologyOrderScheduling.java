@@ -4,25 +4,37 @@ import java.util.Date;
 import java.util.List;
 
 public class RadiologyOrderScheduling {
-    private String code;
+    private String radiologyOrderCode;
     private Date sendingDate;
     private String justification;
     private List<RadiologicalOperation> radiologicalOperations;
     private Date executionDate;
     private ExaminationPriority priority;
+    private String radiologistId;
+    private PatientDetails patientDetails;
 
-    public RadiologyOrderScheduling(String code, Date sendingDate, String justification, List<RadiologicalOperation> radiologicalOperations,
-                                    Date executionDate, ExaminationPriority priority) {
-        this.code = code;
+    public RadiologyOrderScheduling(String radiologyOrderCode, Date sendingDate, String justification, List<RadiologicalOperation> radiologicalOperations,
+                                    Date executionDate, ExaminationPriority priority, PatientDetails patientDetails, String radiologistId) {
+        this.radiologyOrderCode = radiologyOrderCode;
         this.sendingDate = sendingDate;
         this.justification = justification;
         this.radiologicalOperations = radiologicalOperations;
         this.executionDate = executionDate;
         this.priority = priority;
+        this.radiologistId = radiologistId;
+        this.patientDetails = patientDetails;
+    }
+
+    public PatientDetails getPatientDetails() {
+        return this.patientDetails;
+    }
+
+    public String getRadiologistId() {
+        return this.radiologistId;
     }
 
     public String getCode() {
-        return this.code;
+        return this.radiologyOrderCode;
     }
 
     public Date getSendingDate() {
@@ -45,8 +57,12 @@ public class RadiologyOrderScheduling {
         return this.priority;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setPatientDetails(PatientDetails patientDetails) {
+        this.patientDetails = patientDetails;
+    }
+
+    public void setCode(String radiologyOrderCode) {
+        this.radiologyOrderCode = radiologyOrderCode;
     }
 
     public void setSendingDate(Date sendingDate) {
@@ -59,6 +75,10 @@ public class RadiologyOrderScheduling {
 
     public void setRadiologicalOperations(List<RadiologicalOperation> radiologicalOperations) {
         this.radiologicalOperations = radiologicalOperations;
+    }
+
+    public void setRadiologistId(String radiologistId) {
+        this.radiologistId = radiologistId;
     }
 
     public void setExecutionDate(Date executionDate) {

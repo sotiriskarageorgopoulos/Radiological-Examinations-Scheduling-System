@@ -3,7 +3,7 @@ package sot.thanos.model;
 import java.util.Date;
 
 public class PatientDetails extends Person {
-    private String code;
+    private String patientCode;
     private String fatherName;
     private String motherName;
     private String insuranceCode;
@@ -11,14 +11,14 @@ public class PatientDetails extends Person {
     public PatientDetails(String name, String surname, Gender gender, Date birthDate, String phoneNumber,
                           String mobileNumber, String address, String code, String fatherName, String motherName, String insuranceCode) {
         super(name,surname,gender,birthDate,phoneNumber,mobileNumber,address);
-        this.code = code;
+        this.patientCode = code;
         this.fatherName = fatherName;
         this.motherName = motherName;
         this.insuranceCode = insuranceCode;
     }
 
     public String getCode() {
-        return this.code;
+        return this.patientCode;
     }
 
     public String getFatherName() {
@@ -33,8 +33,8 @@ public class PatientDetails extends Person {
         return this.insuranceCode;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setCode(String patientCode) {
+        this.patientCode = patientCode;
     }
 
     public void setFatherName(String fatherName) {
