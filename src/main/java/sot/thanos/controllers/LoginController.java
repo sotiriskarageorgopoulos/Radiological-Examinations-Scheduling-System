@@ -21,6 +21,7 @@ import java.security.NoSuchAlgorithmException;
 public class LoginController {
     public static String login(Request req, Response res) throws IllegalBlockSizeException,
             InvalidKeyException, BadPaddingException, NoSuchAlgorithmException, NoSuchPaddingException {
+        res.type("application/json");
         Login l = new GsonBuilder().create().fromJson(req.body(),Login.class);
         String password = l.password;
         String email = l.email;

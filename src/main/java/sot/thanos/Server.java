@@ -1,6 +1,5 @@
 package sot.thanos;
-import sot.thanos.controllers.LoginController;
-import sot.thanos.controllers.RegisterController;
+import sot.thanos.controllers.*;
 
 import static spark.Spark.*;
 
@@ -20,7 +19,16 @@ public class Server {
 
         path("/api/",() -> {
             post("/register/:category",(req,res) -> RegisterController.register(req,res));
-            get("/login",(req,res) -> LoginController.login(req,res));
+            post("/login",(req,res) -> LoginController.login(req,res));
+            post("/insRadiologicalOrderDetails",(req,res) -> OrderSchedulingController.insRadiologicalOrderDetails(req,res));
+            get("/getRadiologicalOrders", (req,res) -> OrderSchedulingController.getRadiologicalOrders(req,res));
+            get("/getRadiologicalOrdersForRadiologist/:radiologistId",(req,res) -> RadiologistController.getRadiologicalOrdersForRadiologist(req,res));
+            get("/sortRadiologistsIdByAvailability",(req,res) -> RadiologistController.sortRadiologistsIdByAvailability(req,res));
+            get("/getRadiologistById/:radiologistId",(req,res) -> RadiologistController.getRadiologistById(req,res));
+            get("/getRadiologyOperations",(req,res) -> OrderSchedulingController.getRadiologyOperations(req,res));
+            get("/getHospitals",(req,res) -> HospitalController.getHospitals(req,res));
+            put("/scheduleRadiologyOrder/:patientCode", (req,res) -> OrderSchedulingController.scheduleRadiologyOrder(req,res));
+            delete("/deleteTheOldAppointments",(req,res) -> OrderSchedulingController.deleteTheOldAppointments(req,res));
         });
     }
 

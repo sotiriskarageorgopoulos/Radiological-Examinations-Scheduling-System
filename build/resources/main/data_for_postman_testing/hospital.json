@@ -1,0 +1,37 @@
+[
+  {
+    "hospitalId": "djvbdbvdbv",
+    "title": "Νοσοκομείο Γεώργιος Γεννηματάς",
+    "category": "REGIONAL_GENERAL_HOSPITAL"
+  },
+  {
+    "hospitalId": "lalncshcs",
+    "title": "Ευαγγελισμός",
+    "category": "GENERAL_HOSPITAL"
+  },
+  {
+    "hospitalId": "ccnahbc",
+    "title": "Λαϊκό",
+    "category": "GENERAL_HOSPITAL"
+  },
+  {
+    "hospitalId": "oscnsjncs",
+    "title": "Ιπποκράτειο",
+    "category": "GENERAL_HOSPITAL"
+  },
+  {
+    "hospitalId": "alamcaj",
+    "title": "Κέντρο Υγείας Αγίας Παρασκευής",
+    "category": "ΗEALTH_CENTER"
+  },
+  {
+  "hospitalId": "pwojijveij",
+  "title": "Κέντρο Υγείας Αθήνας",
+  "category": "ΗEALTH_CENTER"
+  },
+  {
+    "hospitalId": "qlqmjqhdhq",
+    "title": "Κέντρο Υγείας Αμαρουσίου",
+    "category": "ΗEALTH_CENTER"
+  }
+]

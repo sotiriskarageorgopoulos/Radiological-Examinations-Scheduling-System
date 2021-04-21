@@ -17,7 +17,7 @@ public class PatientDetails extends Person {
         this.insuranceCode = insuranceCode;
     }
 
-    public String getCode() {
+    public String getPatientCode() {
         return this.patientCode;
     }
 
@@ -33,7 +33,7 @@ public class PatientDetails extends Person {
         return this.insuranceCode;
     }
 
-    public void setCode(String patientCode) {
+    public void setPatientCode(String patientCode) {
         this.patientCode = patientCode;
     }
 

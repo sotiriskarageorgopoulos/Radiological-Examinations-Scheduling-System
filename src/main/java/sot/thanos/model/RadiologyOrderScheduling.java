@@ -12,9 +12,10 @@ public class RadiologyOrderScheduling {
     private ExaminationPriority priority;
     private String radiologistId;
     private PatientDetails patientDetails;
+    private String doctorId;
 
     public RadiologyOrderScheduling(String radiologyOrderCode, Date sendingDate, String justification, List<RadiologicalOperation> radiologicalOperations,
-                                    Date executionDate, ExaminationPriority priority, PatientDetails patientDetails, String radiologistId) {
+                                    Date executionDate, ExaminationPriority priority, PatientDetails patientDetails, String radiologistId, String doctorId) {
         this.radiologyOrderCode = radiologyOrderCode;
         this.sendingDate = sendingDate;
         this.justification = justification;
@@ -23,6 +24,11 @@ public class RadiologyOrderScheduling {
         this.priority = priority;
         this.radiologistId = radiologistId;
         this.patientDetails = patientDetails;
+        this.doctorId = doctorId;
+    }
+
+    public String getDoctorId() {
+        return this.doctorId;
     }
 
     public PatientDetails getPatientDetails() {
@@ -33,7 +39,7 @@ public class RadiologyOrderScheduling {
         return this.radiologistId;
     }
 
-    public String getCode() {
+    public String getRadiologyOrderCode() {
         return this.radiologyOrderCode;
     }
 
@@ -61,7 +67,7 @@ public class RadiologyOrderScheduling {
         this.patientDetails = patientDetails;
     }
 
-    public void setCode(String radiologyOrderCode) {
+    public void setRadiologyOrderCode(String radiologyOrderCode) {
         this.radiologyOrderCode = radiologyOrderCode;
     }
 
@@ -87,5 +93,9 @@ public class RadiologyOrderScheduling {
 
     public void setPriority(ExaminationPriority priority) {
         this.priority = priority;
+    }
+
+    public void setDoctorId(String doctorId) {
+        this.doctorId = doctorId;
     }
 }
