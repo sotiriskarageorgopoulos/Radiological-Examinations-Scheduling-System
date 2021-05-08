@@ -7,6 +7,7 @@ import { ScheduleRadiologyOrderComponent } from './schedule-radiology-order/sche
 import { RadiologyOrderComponent } from './radiology-order/radiology-order.component';
 import { RadiologyAppointmentComponent } from './radiology-appointment/radiology-appointment.component';
 export const routes: Routes = [
+    {path:'',redirectTo:'login',pathMatch:'full'},
     {path:'login',component:LoginComponent},
     {path:'register',component:RegisterComponent},
     {path:'radiologist_appointments',component:RadiologistAppointmentsComponent},
