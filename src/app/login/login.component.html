@@ -1,1 +1,86 @@
-<p>login works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5">
+            <form class="login-form mt-5">
+                <h2 class="d-flex justify-content-center">Σύνδεση</h2>
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" name="email">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Συνθηματικό</mat-label>
+                    <input matInput type="password" name="psw">
+                </mat-form-field>
+                <a class="mt-2 mb-3 register-link" routerLink="/register">Εγγραφή νέου χρήστη</a>
+                <button mat-raised-button color="primary">Σύνδεση</button>
+            </form>
+        </div>
+        <div class="col-sm-5">
+            <img src="../../assets/images/login_illustration.png" class="login-img" alt="Illustration Νοσοκομείου" />
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+<div class="container-fluid contact-container">
+    <h2 class="d-flex justify-content-center">Επικοινωνία</h2>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5">
+            <form class="login-form">
+                <h2 class="d-flex justify-content-center text-dark">Στοιχεία Επικοινωνίας</h2>
+                <mat-form-field>
+                    <mat-label>Όνομα</mat-label>
+                    <input matInput type="email" name="email">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Επώνυμο</mat-label>
+                    <input matInput type="email" name="email">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" name="email">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Μήνυμα</mat-label>
+                    <textarea matInput></textarea>
+                </mat-form-field>
+                <button mat-raised-button color="primary">Υποβολή</button>
+            </form>
+        </div>
+        <div class="col-sm-5">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d786.31231221219!2d23.73929722925056!3d37.97131215595102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bd40019b2f15%3A0xb43606a7409c7d1c!2sIrodou%20Attikou%2C%20Athina%20105%2057!5e0!3m2!1sen!2sgr!4v1620558527100!5m2!1sen!2sgr"
+                class="map-style" allowfullscreen="" loading="lazy"></iframe>
+            <address class="mt-3">
+                <p class="mb-3">Ιρώδου Αττικού, Αθήνα 105 57</p>
+                <a class="mb-3" href="tel:2100000000000000"><i class="bi bi-telephone-fill"></i>&nbsp; 2100000000000000</a>
+                <a href="mailto:regional_general_hospital@domain.com"><i class="bi bi-envelope-fill"></i>&nbsp; regional_general_hospital@domain.com</a>
+            </address>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+<div class="container-fluid">
+    <h2 class="d-flex justify-content-center text-dark">Covid-19 Στατιστικά</h2>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <mat-list class="list-style">
+                <mat-list-item>Χώρα</mat-list-item>
+                <mat-list-item>Συνολικά Κρούσματα</mat-list-item>
+                <mat-list-item>Συνολικοί Θάνατοι</mat-list-item>
+                <mat-list-item>Ανάρρωσαν</mat-list-item>
+            </mat-list>
+            <div *ngFor="let d of paginationData">
+                <mat-list class="list-style">
+                    <mat-list-item><img src="{{ d.country }}" class="img-style" width="70" height="40"></mat-list-item>
+                    <mat-list-item>{{ d.cases }}</mat-list-item>
+                    <mat-list-item>{{ d.deaths }}</mat-list-item>
+                    <mat-list-item>{{ d.recovered }}</mat-list-item>
+                </mat-list>
+            </div>
+            <mat-paginator [length]="data.length" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 20]" (page)="changePage($event)"></mat-paginator>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>

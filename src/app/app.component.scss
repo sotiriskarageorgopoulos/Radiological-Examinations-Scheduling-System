@@ -1,0 +1,57 @@
+/* dark shades of primary color*/
+
+$clr-primary-1: hsl(207,15%,25%);
+$clr-primary-2: hsl(207,20%,30%);
+$clr-primary-3: hsl(207,25%,35%);
+$clr-primary-4: hsl(207,30%,40%);
+
+/* primary/main color */
+
+$clr-primary-5: hsl(207, 42%, 47%);
+
+/* lighter shades of primary color */
+
+$clr-primary-6: hsl(207,50%,50%);
+$clr-primary-7: hsl(207,55%,65%);
+$clr-primary-8: hsl(207,60%,70%);
+$clr-primary-9: hsl(207,65%,75%);
+$clr-primary-10: hsl(207,70%,80%);
+
+/* darkest grey for headings*/
+
+$clr-grey-1: hsl(209,61%,16%);
+$clr-grey-2: hsl(211,39%,23%);
+$clr-grey-3: hsl(209,34%,30%);
+$clr-grey-4: hsl(209,28%,39%);
+
+/* grey used for paragraphs */
+
+$clr-grey-5: hsl(210,22%,49%);
+$clr-grey-6: hsl(209,23%,60%);
+$clr-grey-7: hsl(211,27%,70%);
+$clr-grey-8: hsl(210,31%,80%);
+$clr-grey-9: hsl(212,33%,89%);
+$clr-grey-10: hsl(210,36%,96%);
+$clr-white: #fff;
+$clr-gold: #c59d5f;
+$clr-red-dark: hsl(360,67%,44%);
+$clr-red-light: hsl(360,71%,66%);
+$clr-green-dark: hsl(125,67%,44%);
+$clr-green-light: hsl(125,71%,66%);
+$clr-black: #222;
+$transition: all 0.3s linear;
+$spacing: 0.1rem;
+$radius: 0.25rem;
+$light-shadow: 0 5px 15px rgba(0,0,0,0.1);
+$dark-shadow: 0 5px 15px rgba(0,0,0,0.2);
+$font-sizes: (
+    "small": 14px,
+    "medium": 20px,
+    "big": 25px,
+    "biggest": 30px
+);
+$font-weights: (
+    "regular":400,
+    "medium":500,
+    "bold":700
+);

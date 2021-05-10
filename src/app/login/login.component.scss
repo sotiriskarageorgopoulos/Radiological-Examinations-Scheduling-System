@@ -1,0 +1,118 @@
+@import '../app.component';
+
+.login-form {
+    width: 60%;
+    display: flex;
+    flex-flow: column nowrap;
+    border: 3px outset $clr-grey-10; 
+    background-color: $clr-grey-10;  
+    color: $clr-black;
+    padding: 2%;
+}
+
+.register-link {
+    text-decoration: none;
+    color: $clr-grey-5;
+}  
+
+.register-link:hover {
+    color: $clr-grey-4;
+}  
+
+.contact-container {
+    background-color: $clr-primary-7;
+    color: $clr-grey-10;
+    width: 100%;
+}
+
+div h2 {
+    font-size: map-get($font-sizes,"biggest");
+    padding: 1%
+}
+
+.map-style {
+    width: 800px;
+    height: 600px;
+}
+
+address {
+   font-size: map-get($font-sizes,"medium");
+   text-align: center;
+   display: flex;
+   flex-flow: column nowrap;
+}
+
+address a {
+   text-decoration: none;
+   color: $clr-grey-10;
+}
+
+.list-style {
+    display: flex;
+    justify-content: around;
+}
+
+.img-style {
+    width: 70px;
+    height: 50px;    
+}
+
+@media only screen and ( max-width: 1280px ) {
+    .map-style {
+        width: 600px;
+        height: 400px;
+    }
+    
+    .login-img {
+        width: 600px;
+        height: 400px;    
+    }
+
+    .login-form h2 {
+        font-size: map-get($font-sizes,"medium")
+    }
+}
+
+@media only screen and ( max-width: 1024px ) {
+    .login-img {
+        width: 400px;
+        height: 300px;  
+    }
+    
+    .login-form {
+        margin-bottom: 10%;
+        width: 100%;
+    }
+    .map-style {
+        width:330px;
+        height:200px;
+    }
+}
+    
+@media only screen and (max-width: 540px) {
+    .map-style {
+        width:510px;
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 411px) {
+    .login-img {
+        width: 300px;
+        height: 200px; 
+        margin-left: auto;
+        margin-right: auto;   
+    }
+
+    .map-style {
+        width: 340px;
+        height: 200px;
+    }
+
+    .img-style {
+        width: 30px;
+        height: 20px;    
+    }
+    
+}
+    

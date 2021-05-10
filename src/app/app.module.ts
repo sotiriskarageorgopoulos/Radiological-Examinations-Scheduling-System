@@ -17,8 +17,14 @@ import { RadiologyOrderService } from './service/radiology-order-service/radiolo
 import { RadiologyAppointmentService } from './service/radiology-appointment-service/radiology-appointment.service';
 import { ScheduleRadiologyOrderServiceService } from './service/schedule-radiology-order/schedule-radiology-order-service.service';
 import { routes } from './routes';
+import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -36,6 +42,12 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatPaginatorModule,
     RouterModule.forRoot(routes)
   ],
   providers: [
