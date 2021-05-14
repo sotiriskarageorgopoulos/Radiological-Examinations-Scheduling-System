@@ -21,6 +21,7 @@ public class Server {
             post("/register/:category",(req,res) -> RegisterController.register(req,res));
             post("/login",(req,res) -> LoginController.login(req,res));
             post("/insRadiologicalOrderDetails",(req,res) -> OrderSchedulingController.insRadiologicalOrderDetails(req,res));
+            post("/sendMessage", (req,res) -> ContactController.sendContactMsg(req,res));
             get("/getRadiologicalOrders", (req,res) -> OrderSchedulingController.getRadiologicalOrders(req,res));
             get("/getRadiologicalOrdersForRadiologist/:radiologistId",(req,res) -> RadiologistController.getRadiologicalOrdersForRadiologist(req,res));
             get("/sortRadiologistsIdByAvailability",(req,res) -> RadiologistController.sortRadiologistsIdByAvailability(req,res));
