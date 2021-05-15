@@ -51,7 +51,7 @@ public class LoginController {
         while(secretariesCursor.hasNext()) {
             Document doc = secretariesCursor.next();
             String decryptedPassword = Cryptography.decrypt(doc.getString("password"));
-            if(email.equals(doc.getString("email")) && password.equals(decryptedPassword)) return "{\"login\":true,\"category\":'secretary}";
+            if(email.equals(doc.getString("email")) && password.equals(decryptedPassword)) return "{\"login\":true,\"category\":'secretary'}";
         }
 
         return "{\"login\":false}";
