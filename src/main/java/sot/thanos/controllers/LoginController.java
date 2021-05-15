@@ -37,21 +37,21 @@ public class LoginController {
         while(doctorsCursor.hasNext()) {
             Document doc = doctorsCursor.next();
             String decryptedPassword = Cryptography.decrypt(doc.getString("password"));
-            if(email.equals(doc.getString("email")) && password.equals(decryptedPassword)) return "{\"login\":true}";
+            if(email.equals(doc.getString("email")) && password.equals(decryptedPassword)) return "{\"login\":true,\"category\":'doctor'}";
         }
 
         MongoCursor<Document> radiologistsCursor = radiologists.iterator();
         while(radiologistsCursor.hasNext()) {
             Document doc = radiologistsCursor.next();
             String decryptedPassword = Cryptography.decrypt(doc.getString("password"));
-            if(email.equals(doc.getString("email")) && password.equals(decryptedPassword)) return "{\"login\":true}";
+            if(email.equals(doc.getString("email")) && password.equals(decryptedPassword)) return "{\"login\":true,\"category\":'radiologist'}";
         }
 
         MongoCursor<Document> secretariesCursor = secretaries.iterator();
         while(secretariesCursor.hasNext()) {
             Document doc = secretariesCursor.next();
             String decryptedPassword = Cryptography.decrypt(doc.getString("password"));
-            if(email.equals(doc.getString("email")) && password.equals(decryptedPassword)) return "{\"login\":true}";
+            if(email.equals(doc.getString("email")) && password.equals(decryptedPassword)) return "{\"login\":true,\"category\":'secretary}";
         }
 
         return "{\"login\":false}";
