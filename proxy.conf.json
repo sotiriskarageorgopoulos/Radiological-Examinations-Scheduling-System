@@ -1,0 +1,8 @@
+{
+    "/api/*": {
+        "target": "https://radiological-api.herokuapp.com",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+}

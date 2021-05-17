@@ -1,1 +1,130 @@
-<p>register works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 mt-5 mb-5">
+            <form class="register-form" novalidate [formGroup]="registerForm" (ngSubmit)="onSubmitRegister()">
+                <h2 class="d-flex justify-content-center">Εγγραφή στο σύστημα</h2>
+                <div class="container-fluid input-group mb-3">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <mat-form-field>
+                                <mat-label>Όνομα</mat-label>
+                                <input matInput type="text" formControlName="name">
+                                <mat-error *ngIf="checkError('name', 'required')">Το πεδίο είναι υποχρεωτικό</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6">
+                            <mat-form-field>
+                                <mat-label>Επώνυμο</mat-label>
+                                <input matInput type="text" formControlName="surname">
+                                <mat-error *ngIf="checkError('surname', 'required')">Το πεδίο είναι υποχρεωτικό</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid input-group mb-3">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <mat-form-field>
+                                <mat-label>Email</mat-label>
+                                <input matInput type="email" formControlName="email">
+                                <mat-error *ngIf="checkError('email', 'required')">Το πεδίο είναι υποχρεωτικό</mat-error>
+                                <mat-error *ngIf="checkError('email', 'pattern')">Δεν έχετε δώσει έγκυρο email</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6">
+                            <mat-form-field>
+                                <mat-label>Συνθηματικό</mat-label>
+                                <input matInput type="password" formControlName="password">
+                                <mat-error *ngIf="checkError('password', 'required')">Το πεδίο είναι υποχρεωτικό</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid input-group mb-3">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <mat-form-field>
+                                <mat-label>Κινητό</mat-label>
+                                <input matInput type="tel" formControlName="mobileNumber">
+                                <mat-error *ngIf="checkError('mobileNumber', 'required')">Το πεδίο είναι υποχρεωτικό</mat-error>
+                                <mat-error *ngIf="checkError('mobileNumber', 'pattern')">Ένας τηλεφωνικός αριθμός πρέπει να είναι 10 ψηφία</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6">
+                            <mat-form-field>
+                                <mat-label>Σταθερό</mat-label>
+                                <input matInput type="tel" formControlName="phoneNumber">
+                                <mat-error *ngIf="checkError('phoneNumber', 'required')">Το πεδίο είναι υποχρεωτικό</mat-error>
+                                <mat-error *ngIf="checkError('phoneNumber', 'pattern')">Ένας τηλεφωνικός αριθμός πρέπει να είναι 10 ψηφία</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid input-group mb-3">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <mat-form-field>
+                                <mat-label>Ημερομηνία Γέννησης</mat-label>
+                                <input matInput type="date" formControlName="birthDate">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6">
+                            <mat-form-field>
+                                <mat-label>Διεύθυνση</mat-label>
+                                <input matInput type="text" formControlName="address">
+                                <mat-error *ngIf="checkError('address', 'required')">Το πεδίο είναι υποχρεωτικό</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid input-group mb-3">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Φύλο</mat-label>
+                                <mat-select formControlName="gender">
+                                    <mat-option *ngFor="let g of genders" value="{{g?.value}}">{{g?.title}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Κατηγορία Υγειονομικού Υπαλλήλου</mat-label>
+                                <mat-select formControlName="healthWorkerCategory">
+                                    <mat-option *ngFor="let w of healthWorkerCategory" value="{{w?.value}}" (click)="displayHospitals($event)">{{w?.title}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-6">
+                            <mat-form-field appearance="fill" style="display: none;" id="hospitalsId">
+                                <mat-label>Νοσοκομείο</mat-label>
+                                <mat-select formControlName="hospitalId">
+                                    <mat-option *ngFor="let h of hospitals" value="{{h?.hospitalId}}">{{h?.title}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-3"></div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <a routerLink="/login" class="login-page-link">Αρχική Σελίδα</a>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button mat-flat-button color="primary" type="submit">Εγγραφή</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4" id="text"></div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>

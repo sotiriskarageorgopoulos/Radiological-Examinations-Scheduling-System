@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -16,6 +17,7 @@ import { RadiologistAppointmentsService } from './service/radiologist-appointmen
 import { RadiologyOrderService } from './service/radiology-order-service/radiology-order.service';
 import { RadiologyAppointmentService } from './service/radiology-appointment-service/radiology-appointment.service';
 import { ScheduleRadiologyOrderServiceService } from './service/schedule-radiology-order/schedule-radiology-order-service.service';
+import { FooterService } from './service/footer-service/footer-service.service';
 import { routes } from './routes';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -25,6 +27,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatListModule } from '@angular/material/list';
+import { MatSelectModule } from '@angular/material/select';
+import { AuthGuard } from './guards/auth.guard';
+import { AuthenticationService } from './service/authenticationService/authentication.service';
 
 @NgModule({
   declarations: [
@@ -48,6 +53,8 @@ import { MatListModule } from '@angular/material/list';
     MatInputModule,
     MatButtonModule,
     MatPaginatorModule,
+    MatSelectModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [
@@ -56,7 +63,11 @@ import { MatListModule } from '@angular/material/list';
     RadiologyOrderService,
     RadiologistAppointmentsService,
     RadiologyAppointmentService,
-    ScheduleRadiologyOrderServiceService
+    ScheduleRadiologyOrderServiceService,
+    AuthGuard,
+    FooterService,
+    AuthenticationService
+    
   ],
   bootstrap: [AppComponent]
 })

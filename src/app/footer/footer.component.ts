@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FooterService } from '../service/footer-service/footer-service.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   year = new Date().getFullYear()
-  constructor() { }
+  @Input()
+  nameOfComponent: string
+  className:string
 
-  ngOnInit(): void {
+  constructor(private fs:FooterService) {
+    
+    console.log(this.nameOfComponent)
   }
 
+  ngOnInit():void {
+   
+  }
+
+  ngOnChange():void {
+
+  }
+
+  ngDoCheck():void {
+    this.selectClass()
+  }
+
+  selectClass() {
+    this.nameOfComponent = this.fs.getNameOfComponent();
+  }
 }

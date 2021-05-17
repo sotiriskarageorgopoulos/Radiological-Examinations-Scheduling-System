@@ -1,0 +1,39 @@
+@import '../app.component';
+    
+.register-form {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $clr-grey-10;
+    box-shadow: $light-shadow;
+    padding: 2%;
+    width: 60%;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+}
+
+.register-btn {
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+.login-page-link {
+    text-decoration: none;
+    color: $clr-grey-5;   
+    font-size: map-get($font-sizes,"small");
+}
+
+.login-page-link:hover {
+    color: $clr-grey-7;   
+}
+
+.error-text-style {
+    background-color: $clr-grey-10;
+    color: $clr-red-light;
+    border: 2px solid $clr-red-dark;
+    border-radius: $radius;
+    text-align: center;
+    padding: 2%;
+}

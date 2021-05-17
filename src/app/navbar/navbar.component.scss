@@ -6,10 +6,22 @@
 .navbar-brand {
     color: $clr-grey-10;  
     font-size: map-get($font-sizes,"biggest");  
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 2%;
 }
 
+.logout-choice {
+    color: $clr-grey-10;  
+    font-size: map-get($font-sizes,"medium");  
+    text-decoration: none;
+    position: absolute;
+    right: 50px;
+}
+
+.logout-choice:hover,
 .navbar-brand:hover {
     color: $clr-grey-9;
+}
+
+.logout-choice:hover {
+    cursor: pointer;    
 }

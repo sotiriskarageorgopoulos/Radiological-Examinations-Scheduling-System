@@ -1,4 +1,6 @@
-<footer class="container-fluid">
+<footer class="container-fluid" [ngClass]="{
+    'footer-register': nameOfComponent === 'RegisterComponent'
+  }">
     <div class="row">
         <div class="col-sm-4">
             <p class="footer-title">Περιφερειακό Γενικό Νοσοκομείο</p>

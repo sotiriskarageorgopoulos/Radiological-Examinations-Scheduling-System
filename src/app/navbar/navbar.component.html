@@ -1,3 +1,24 @@
 <nav class="navbar navbar-light bg-navbar ">
-    <a class="navbar-brand" href="#">Σύστημα Ακτινολογικών Εξετάσεων</a>
+    <div [ngSwitch]="nameOfComponent">
+        <div *ngSwitchCase="'RadiologistAppointmentsComponent'">
+            <a class="navbar-brand" href="#">Σύστημα Ακτινολογικών Εξετάσεων</a>
+            <a class="logout-choice">Αποσύνδεση</a>
+        </div>
+        <div *ngSwitchCase="'ScheduleRadiologyOrderComponent'">
+            <a class="navbar-brand" href="#">Σύστημα Ακτινολογικών Εξετάσεων</a>
+            <a class="logout-choice">Αποσύνδεση</a>
+        </div>
+        <div *ngSwitchCase="'RadiologyOrderComponent'">
+            <a class="navbar-brand" href="#">Σύστημα Ακτινολογικών Εξετάσεων</a>
+            <a class="logout-choice">Αποσύνδεση</a>
+        </div>
+        <div *ngSwitchCase="'RadiologyAppointmentComponent'">
+            <a class="navbar-brand" href="#">Σύστημα Ακτινολογικών Εξετάσεων</a>
+            <a class="logout-choice">Αποσύνδεση</a>
+        </div>
+        <div *ngSwitchDefault>
+            <a class="navbar-brand" href="#">Σύστημα Ακτινολογικών Εξετάσεων</a>
+        </div>
+    </div>
+
 </nav>

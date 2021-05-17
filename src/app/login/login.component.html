@@ -2,15 +2,18 @@
     <div class="row">
         <div class="col-sm-1"></div>
         <div class="col-sm-5">
-            <form class="login-form mt-5">
+            <form class="login-form mt-5" [formGroup]="loginForm" (ngSubmit)="authentication()">
                 <h2 class="d-flex justify-content-center">Σύνδεση</h2>
                 <mat-form-field>
                     <mat-label>Email</mat-label>
-                    <input matInput type="email" name="email">
+                    <input matInput type="email" formControlName="email">
+                    <mat-error *ngIf="checkErrorLoginForm('email', 'required')">Το πεδίο είναι υποχρεωτικό</mat-error>
+                    <mat-error *ngIf="checkErrorLoginForm('email', 'pattern')">Το email δεν είναι έγκυρο</mat-error>
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Συνθηματικό</mat-label>
-                    <input matInput type="password" name="psw">
+                    <input matInput type="password" formControlName="password">
+                    <mat-error *ngIf="checkErrorLoginForm('password', 'required')">Το πεδίο είναι υποχρεωτικό</mat-error>
                 </mat-form-field>
                 <a class="mt-2 mb-3 register-link" routerLink="/register">Εγγραφή νέου χρήστη</a>
                 <button mat-raised-button color="primary">Σύνδεση</button>
@@ -27,23 +30,33 @@
     <div class="row">
         <div class="col-sm-1"></div>
         <div class="col-sm-5">
-            <form class="login-form">
+            <form class="login-form" [formGroup]="messageForm" (ngSubmit)="sendMessage()">
                 <h2 class="d-flex justify-content-center text-dark">Στοιχεία Επικοινωνίας</h2>
                 <mat-form-field>
                     <mat-label>Όνομα</mat-label>
-                    <input matInput type="email" name="email">
+                    <input matInput type="text" formControlName="name">
+                    <mat-error *ngIf="checkErrorMessageForm('name', 'required')">Το πεδίο είναι υποχρεωτικό</mat-error>
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Επώνυμο</mat-label>
-                    <input matInput type="email" name="email">
+                    <input matInput type="text" formControlName="surname">
+                    <mat-error *ngIf="checkErrorMessageForm('surname', 'required')">Το πεδίο είναι υποχρεωτικό</mat-error>
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Email</mat-label>
-                    <input matInput type="email" name="email">
+                    <input matInput type="email" formControlName="email">
+                    <mat-error *ngIf="checkErrorMessageForm('email', 'required')">Το πεδίο είναι υποχρεωτικό</mat-error>
+                    <mat-error *ngIf="checkErrorMessageForm('email', 'pattern')">Το email δεν είναι έγκυρο</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Θέμα</mat-label>
+                    <input matInput type="text" formControlName="subject">
+                    <mat-error *ngIf="checkErrorMessageForm('subject', 'required')">Το πεδίο είναι υποχρεωτικό</mat-error>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
                     <mat-label>Μήνυμα</mat-label>
-                    <textarea matInput></textarea>
+                    <textarea matInput formControlName="message"></textarea>
+                    <mat-error *ngIf="checkErrorMessageForm('message', 'required')">Το πεδίο είναι υποχρεωτικό</mat-error>
                 </mat-form-field>
                 <button mat-raised-button color="primary">Υποβολή</button>
             </form>
