@@ -1,8 +1,8 @@
 package sot.thanos.model;
 
 public enum ExaminationPriority {
-    ALERT,
     EMERGENT,
     URGENT,
-    ASAP
+    SEMI_URGENT,
+    NON_URGENT,
 }

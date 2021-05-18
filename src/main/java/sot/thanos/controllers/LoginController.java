@@ -37,21 +37,64 @@ public class LoginController {
         while(doctorsCursor.hasNext()) {
             Document doc = doctorsCursor.next();
             String decryptedPassword = Cryptography.decrypt(doc.getString("password"));
-            if(email.equals(doc.getString("email")) && password.equals(decryptedPassword)) return "{\"login\":true,\"category\":\"doctor\"}";
+            if(email.equals(doc.getString("email")) && password.equals(decryptedPassword)) {
+                return "{\"login\":true,\n" +
+                        "\"category\":\"doctor,\"\n" +
+                        "\"doctorId\":" + doc.getString("doctorId")+",\n"+
+                        "\"name\":"+ doc.getString("name")+",\n"+
+                        "\"surname\":"+doc.getString("surname")+",\n"+
+                        "\"gender\":"+doc.getString("gender")+",\n"+
+                        "\"birthDate\":"+doc.getDate("birthDate")+",\n"+
+                        "\"phoneNumber\":"+doc.getString("phoneNumber")+",\n"+
+                        "\"mobileNumber\":"+doc.getString("mobileNumber")+",\n"+
+                        "\"address\":"+doc.getString("address")+",\n"+
+                        "\"email\":"+doc.getString("email")+",\n"+
+                        "\"password\":"+decryptedPassword+",\n"+
+                        "\"hospitalId\":"+doc.getString("hospitalId")+"\n"+
+                        "}";
+            }
         }
 
         MongoCursor<Document> radiologistsCursor = radiologists.iterator();
         while(radiologistsCursor.hasNext()) {
             Document doc = radiologistsCursor.next();
             String decryptedPassword = Cryptography.decrypt(doc.getString("password"));
-            if(email.equals(doc.getString("email")) && password.equals(decryptedPassword)) return "{\"login\":true,\"category\":\"radiologist\"}";
+            if(email.equals(doc.getString("email")) && password.equals(decryptedPassword)) {
+                return "{\"login\":true,\n" +
+                        "\"category\":\"radiologist,\"\n" +
+                        "\"radiologistId\":" + doc.getString("radiologistId")+",\n"+
+                        "\"name\":"+ doc.getString("name")+",\n"+
+                        "\"surname\":"+doc.getString("surname")+",\n"+
+                        "\"gender\":"+doc.getString("gender")+",\n"+
+                        "\"birthDate\":"+doc.getDate("birthDate")+",\n"+
+                        "\"phoneNumber\":"+doc.getString("phoneNumber")+",\n"+
+                        "\"mobileNumber\":"+doc.getString("mobileNumber")+",\n"+
+                        "\"address\":"+doc.getString("address")+",\n"+
+                        "\"email\":"+doc.getString("email")+",\n"+
+                        "\"password\":"+decryptedPassword+"\n"+
+                        "}";
+            }
         }
 
         MongoCursor<Document> secretariesCursor = secretaries.iterator();
         while(secretariesCursor.hasNext()) {
             Document doc = secretariesCursor.next();
             String decryptedPassword = Cryptography.decrypt(doc.getString("password"));
-            if(email.equals(doc.getString("email")) && password.equals(decryptedPassword)) return "{\"login\":true,\"category\":\"secretary\"}";
+            if(email.equals(doc.getString("email")) && password.equals(decryptedPassword)) {
+                return "{\"login\":true,\n" +
+                        "\"category\":\"secretary,\"\n" +
+                        "\"secretaryId\":" + doc.getString("secretaryId")+",\n"+
+                        "\"name\":"+ doc.getString("name")+",\n"+
+                        "\"surname\":"+doc.getString("surname")+",\n"+
+                        "\"gender\":"+doc.getString("gender")+",\n"+
+                        "\"birthDate\":"+doc.getDate("birthDate")+",\n"+
+                        "\"phoneNumber\":"+doc.getString("phoneNumber")+",\n"+
+                        "\"mobileNumber\":"+doc.getString("mobileNumber")+",\n"+
+                        "\"address\":"+doc.getString("address")+",\n"+
+                        "\"email\":"+doc.getString("email")+",\n"+
+                        "\"password\":"+decryptedPassword+"\n"+
+                        "}";
+            }
         }
 
         return "{\"login\":false}";
