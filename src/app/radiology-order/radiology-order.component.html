@@ -1,1 +1,128 @@
-<p>radiology-order works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 mt-5 mb-5">
+            <form class="container-fluid rad-order-form" [formGroup]="radiologyOrderForm">
+                <h2 class="d-flex justify-content-center">Συμπλήρωση Ακτινολογικής Εντολής</h2>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <mat-form-field class="rad-order-input">
+                            <mat-label>Κωδικός Ακτινολογικής Εντολής</mat-label>
+                            <input matInput readonly type="text" formControlName="radiologyOrderCode"></mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container-fluid" formGroupName="patientDetails">
+                        <div class="row">
+                            <h2 class="d-flex justify-content-center">Στοιχεία Ασθενούς</h2>
+                            <div class="col-sm-6">
+                                <mat-form-field class="rad-order-input">
+                                    <mat-label>Κωδικός Ασθενή</mat-label>
+                                    <input matInput readonly type="text" formControlName="patientCode"></mat-form-field>
+                            </div>
+                            <div class="col-sm-6">
+                                <mat-form-field class="rad-order-input">
+                                    <mat-label>Κωδικός Ασφαλιστικού Φορέα Ασθενή</mat-label>
+                                    <input matInput type="text" formControlName="insuranceCode"></mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <mat-form-field class="rad-order-input">
+                                    <mat-label>Όνομα Ασθενή</mat-label>
+                                    <input matInput type="text" formControlName="name"></mat-form-field>
+                            </div>
+                            <div class="col-sm-6">
+                                <mat-form-field class="rad-order-input">
+                                    <mat-label>Επώνυμο Ασθενή</mat-label>
+                                    <input matInput type="text" formControlName="surname"></mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <mat-form-field class="rad-order-input">
+                                    <mat-label>Πατρώνυμο Ασθενή</mat-label>
+                                    <input matInput type="text" formControlName="fatherName"></mat-form-field>
+                            </div>
+                            <div class="col-sm-6">
+                                <mat-form-field class="rad-order-input">
+                                    <mat-label>Μητρώνυμο Ασθενή</mat-label>
+                                    <input matInput type="text" formControlName="motherName"></mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <mat-form-field class="rad-order-input">
+                                    <mat-label>Σταθερό Τηλέφωνο Ασθενή</mat-label>
+                                    <input matInput type="tel" formControlName="phoneNumber"></mat-form-field>
+                            </div>
+                            <div class="col-sm-6">
+                                <mat-form-field class="rad-order-input">
+                                    <mat-label>Κινητό Τηλέφωνο Ασθενή</mat-label>
+                                    <input matInput type="tel" formControlName="mobileNumber"></mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <mat-form-field class="rad-order-input">
+                                    <mat-label>Ημερομηνία Γέννησης</mat-label>
+                                    <input matInput type="date" formControlName="birthDate"></mat-form-field>
+                            </div>
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Φύλο</mat-label>
+                                    <mat-select>
+                                        <mat-option *ngFor="let gender of genders" [value]="gender?.value">
+                                            {{gender?.title}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <h2 class="d-flex justify-content-center">Στοιχεία Ακτινολογικής Εντολής</h2>
+                            <div class="col-sm-6">
+                                <mat-form-field class="rad-order-input">
+                                    <mat-label>Αναγνωριστικό Ιατρού</mat-label>
+                                    <input matInput type="text" formControlName="doctorId"></mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 mb-5 mt-5">
+                                <button mat-raised-button type="button" (click)="openDialog()">Επιλογή Ακτινολογικών Εξετάσεων</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Προτεραιότητα</mat-label>
+                                    <mat-select>
+                                        <mat-option *ngFor="let priority of priorities" [value]="priority?.value">
+                                            {{priority?.title}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-8">
+                                <mat-form-field class="rad-order-input">
+                                    <mat-label>Αιτιολογία</mat-label>
+                                    <textarea matInput readonly type="text" formControlName="justification"></textarea>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 d-flex justify-content-center">
+                    <button mat-raised-button type="submit" color="primary">Υποβολή</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>

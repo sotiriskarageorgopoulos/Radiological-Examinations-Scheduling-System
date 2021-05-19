@@ -1,13 +1,14 @@
 import { Injectable, HostListener } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AuthenticationService } from '../service/authenticationService/authentication.service';
+import { AuthenticationService } from '../service/authentication-service/authentication.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  constructor(private as:AuthenticationService) {}
+  constructor(private as: AuthenticationService,
+              private router: Router) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -17,6 +18,7 @@ export class AuthGuard implements CanActivate {
       return true
     }
     else {
+      this.router.navigate(['**'])
       return false
     }
   }

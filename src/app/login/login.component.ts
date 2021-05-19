@@ -4,8 +4,7 @@ import { LoginService } from '../service/login-service/login.service';
 import { FooterService } from '../service/footer-service/footer-service.service';
 import { FormGroup,FormControl,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ThrowStmt } from '@angular/compiler';
-import { AuthenticationService } from '../service/authenticationService/authentication.service';
+import { AuthenticationService } from '../service/authentication-service/authentication.service';
 
 @Component({selector: 'app-login', templateUrl: './login.component.html', styleUrls: ['./login.component.scss']})
 
@@ -135,14 +134,17 @@ export class LoginComponent implements OnInit {
                     if(m.category === 'doctor') {
                         this.as.setIsAuthenticated(m.login);
                         this.router.navigate(['/radiology_order'])
+                        sessionStorage.setItem('user',JSON.stringify(m))
                     }
                     else if(m.category === 'radiologist') {
                         this.as.setIsAuthenticated(m.login);
                         this.router.navigate(['/radiologist_appointments'])
+                        sessionStorage.setItem('user',JSON.stringify(m))
                     }
                     else if(m.category === 'secretary') {
                         this.as.setIsAuthenticated(m.login);
                         this.router.navigate(['/schedule_radiology_order'])
+                        sessionStorage.setItem('user',JSON.stringify(m))
                     }
                 }
                 else {

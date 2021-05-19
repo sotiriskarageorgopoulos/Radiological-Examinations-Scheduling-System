@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FooterService } from '../service/footer-service/footer-service.service';
+import { AuthenticationService } from '../service/authentication-service/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +11,9 @@ import { FooterService } from '../service/footer-service/footer-service.service'
 export class NavbarComponent implements OnInit {
   nameOfComponent: string
 
-  constructor(private fs:FooterService) { }
+  constructor(private fs:FooterService,
+              private as:AuthenticationService,
+              private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -17,4 +21,10 @@ export class NavbarComponent implements OnInit {
   ngDoCheck(): void {
     this.nameOfComponent = this.fs.getNameOfComponent()
   }
+
+  logOut() {
+    this.as.logOut()
+    this.router.navigate(['/login'])
+  }
+
 }

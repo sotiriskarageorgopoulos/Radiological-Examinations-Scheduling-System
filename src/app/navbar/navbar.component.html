@@ -1,23 +1,27 @@
 <nav class="navbar navbar-light bg-navbar ">
     <div [ngSwitch]="nameOfComponent">
         <div *ngSwitchCase="'RadiologistAppointmentsComponent'">
-            <a class="navbar-brand" href="#">Σύστημα Ακτινολογικών Εξετάσεων</a>
-            <a class="logout-choice">Αποσύνδεση</a>
+            <a class="navbar-brand">Σύστημα Ακτινολογικών Εξετάσεων</a>
+            <a class="profile-choice" routerLink="/profile">Προφίλ</a>
+            <a class="logout-choice" (click)="logOut()">Αποσύνδεση</a>
         </div>
         <div *ngSwitchCase="'ScheduleRadiologyOrderComponent'">
-            <a class="navbar-brand" href="#">Σύστημα Ακτινολογικών Εξετάσεων</a>
-            <a class="logout-choice">Αποσύνδεση</a>
+            <a class="navbar-brand">Σύστημα Ακτινολογικών Εξετάσεων</a>
+            <a class="profile-choice" routerLink="/profile">Προφίλ</a>
+            <a class="logout-choice" (click)="logOut()">Αποσύνδεση</a>
         </div>
         <div *ngSwitchCase="'RadiologyOrderComponent'">
-            <a class="navbar-brand" href="#">Σύστημα Ακτινολογικών Εξετάσεων</a>
-            <a class="logout-choice">Αποσύνδεση</a>
+            <a class="navbar-brand">Σύστημα Ακτινολογικών Εξετάσεων</a>
+            <a class="profile-choice" routerLink="/profile">Προφίλ</a>
+            <a class="logout-choice" (click)="logOut()">Αποσύνδεση</a>
         </div>
         <div *ngSwitchCase="'RadiologyAppointmentComponent'">
-            <a class="navbar-brand" href="#">Σύστημα Ακτινολογικών Εξετάσεων</a>
-            <a class="logout-choice">Αποσύνδεση</a>
+            <a class="navbar-brand">Σύστημα Ακτινολογικών Εξετάσεων</a>
+            <a class="profile-choice" routerLink="/profile">Προφίλ</a>
+            <a class="logout-choice" (click)="logOut()">Αποσύνδεση</a>
         </div>
         <div *ngSwitchDefault>
-            <a class="navbar-brand" href="#">Σύστημα Ακτινολογικών Εξετάσεων</a>
+            <a class="navbar-brand">Σύστημα Ακτινολογικών Εξετάσεων</a>
         </div>
     </div>
 

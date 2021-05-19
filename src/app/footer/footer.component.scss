@@ -32,3 +32,16 @@ footer {
 .footer-register {
    margin-top: 40px;
 }
+
+@media only screen and(max-width:1280px) {
+    .footer-title {
+        font-size: map-get($font-sizes, "medium")
+    }    
+}
+
+@media only screen and (max-width:540px) {
+    footer {
+        height: 50vh;   
+    }
+}
+    

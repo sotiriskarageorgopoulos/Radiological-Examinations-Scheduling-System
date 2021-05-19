@@ -1,0 +1,13 @@
+@import '../app.component';
+
+.rad-order-input {
+   width: 100% !important;   
+   font-size: 18px;
+}
+
+.rad-order-form {
+    width: 100%;
+    padding: 2%;
+    background-color: $clr-grey-10;
+    border-radius: $radius;    
+}

@@ -9,6 +9,7 @@
     margin-left: 2%;
 }
 
+.profile-choice,
 .logout-choice {
     color: $clr-grey-10;  
     font-size: map-get($font-sizes,"medium");  
@@ -17,11 +18,36 @@
     right: 50px;
 }
 
+.profile-choice:hover,
 .logout-choice:hover,
 .navbar-brand:hover {
     color: $clr-grey-9;
 }
 
+.profile-choice:hover,
 .logout-choice:hover {
     cursor: pointer;    
+}
+
+.profile-choice {
+    position: absolute;
+    right: 180px;
+}
+
+@media only screen and (max-width:1024px) {
+    .profile-choice,
+    .logout-choice {
+        position: unset;
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 2%;  
+        font-size: map-get($font-sizes,"small");      
+    }
+}
+    
+
+@media only screen and (max-width: 540px) {
+     .navbar-brand {
+        font-size: map-get($font-sizes,"medium");     
+    }   
 }

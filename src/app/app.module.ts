@@ -29,7 +29,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { AuthGuard } from './guards/auth.guard';
-import { AuthenticationService } from './service/authenticationService/authentication.service';
+import { AuthenticationService } from './service/authentication-service/authentication.service';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AuthenticationService } from './service/authenticationService/authentic
     Error404Component,
     RadiologyAppointmentComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
