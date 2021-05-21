@@ -1,24 +1,24 @@
 package sot.thanos.model;
 
 public class RadiologicalOperation {
-    private String title;
+    private String name;
     private String category;
 
-    public RadiologicalOperation(String title, String category) {
-        this.title = title;
+    public RadiologicalOperation(String name, String category) {
+        this.name = name;
         this.category = category;
     }
 
-    public String getTitle() {
-        return this.title;
+    public String getName() {
+        return this.name;
     }
 
     public String getCategory() {
         return this.category;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setCategory(String category) {
