@@ -31,6 +31,12 @@ public class Server {
             put("/scheduleRadiologyOrder/:patientCode", (req,res) -> OrderSchedulingController.scheduleRadiologyOrder(req,res));
             delete("/deleteTheOldAppointments",(req,res) -> OrderSchedulingController.deleteTheOldAppointments(req,res));
         });
+
+        before((req, res) -> {
+            res.header("Access-Control-Allow-Origin", "*");
+            res.header("Access-Control-Allow-Headers", "*");
+            res.type("application/json");
+        });
     }
 
 }
