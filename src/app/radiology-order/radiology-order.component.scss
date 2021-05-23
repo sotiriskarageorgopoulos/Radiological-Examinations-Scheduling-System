@@ -11,3 +11,29 @@
     background-color: $clr-grey-10;
     border-radius: $radius;    
 }
+
+.cancel-btn {
+    border-radius: 50%;
+    border: 2px solid $clr-red-dark;
+    background-color: $clr-red-dark;
+    color: $clr-grey-10;
+}
+
+.cancel-btn:hover {
+    background-color: $clr-red-light;
+}
+
+.checkbox-style {
+   display: flex;
+   flex-flow: column nowrap;
+}
+
+::ng-deep .mat-checkbox .mat-checkbox-label {
+  width: 1200px;
+}
+
+#radiologicalOperations {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 2%;
+}

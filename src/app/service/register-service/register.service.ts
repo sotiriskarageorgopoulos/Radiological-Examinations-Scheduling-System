@@ -10,8 +10,8 @@ export class RegisterService {
 
   constructor(private http:HttpClient) { }
 
-  private GET_HOSPITALS_PATH: string = "/api/getHospitals";
-  private POST_A_NEW_USER: string = "/api/register/"
+  private GET_HOSPITALS_PATH: string = "https://radiological-api.herokuapp.com/api/getHospitals";
+  private POST_A_NEW_USER: string = "https://radiological-api.herokuapp.com/api/register/"
 
   getHospitals():Observable<Hospital[]> {
     return this.http.get<Hospital[]>(this.GET_HOSPITALS_PATH);

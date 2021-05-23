@@ -12,10 +12,7 @@ export class FooterComponent implements OnInit {
   nameOfComponent: string
   className:string
 
-  constructor(private fs:FooterService) {
-    
-    console.log(this.nameOfComponent)
-  }
+  constructor(private fs:FooterService) {}
 
   ngOnInit():void {
    

@@ -8,7 +8,6 @@ export class AuthenticationService {
   private authentication: Boolean
   constructor() { 
     let user = JSON.parse(sessionStorage.getItem('user'))
-    console.log(user)
     if(user) {
       this.authentication = user.login 
     }

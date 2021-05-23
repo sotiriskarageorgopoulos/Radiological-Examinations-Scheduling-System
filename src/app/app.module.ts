@@ -28,6 +28,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthenticationService } from './service/authentication-service/authentication.service';
 import { ProfileComponent } from './profile/profile.component';
@@ -57,6 +59,8 @@ import { ProfileComponent } from './profile/profile.component';
     MatPaginatorModule,
     MatSelectModule,
     ReactiveFormsModule,
+    MatCheckboxModule,
+    NgbModule,
     RouterModule.forRoot(routes)
   ],
   providers: [
