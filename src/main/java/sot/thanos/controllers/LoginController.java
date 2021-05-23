@@ -38,6 +38,7 @@ public class LoginController {
             Document doc = doctorsCursor.next();
             String decryptedPassword = Cryptography.decrypt(doc.getString("password"));
             if(email.equals(doc.getString("email")) && password.equals(decryptedPassword)) {
+                res.status(200);
                 return "{\"login\":true,\n" +
                         "\"category\":\"doctor\""+",\n" +
                         "\"doctorId\":"+"\""+ doc.getString("doctorId")+"\""+",\n"+
@@ -60,6 +61,7 @@ public class LoginController {
             Document doc = radiologistsCursor.next();
             String decryptedPassword = Cryptography.decrypt(doc.getString("password"));
             if(email.equals(doc.getString("email")) && password.equals(decryptedPassword)) {
+                res.status(200);
                 return "{\"login\":true,\n" +
                         "\"category\":\"radiologist\""+",\n" +
                         "\"radiologistId\":"+"\""+doc.getString("radiologistId")+"\""+",\n"+
@@ -81,6 +83,7 @@ public class LoginController {
             Document doc = secretariesCursor.next();
             String decryptedPassword = Cryptography.decrypt(doc.getString("password"));
             if(email.equals(doc.getString("email")) && password.equals(decryptedPassword)) {
+                res.status(200);
                 return "{\"login\":true,\n" +
                         "\"category\":\"secretary\""+",\n" +
                         "\"secretaryId\":" +"\""+ doc.getString("secretaryId")+"\"" +",\n"+
