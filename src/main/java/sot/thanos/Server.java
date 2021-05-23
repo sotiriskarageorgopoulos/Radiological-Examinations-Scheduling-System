@@ -35,6 +35,7 @@ public class Server {
         before((req, res) -> {
             res.header("Access-Control-Allow-Origin", "*");
             res.header("Access-Control-Allow-Headers", "*");
+            res.header("Access-Control-Allow-Methods","DELETE, POST, GET, PUT, OPTIONS");
             res.type("application/json");
         });
     }
