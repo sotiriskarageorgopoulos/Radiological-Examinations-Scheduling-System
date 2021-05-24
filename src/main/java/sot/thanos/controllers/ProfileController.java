@@ -38,7 +38,8 @@ public class ProfileController {
                                          set("phoneNumber",doctor.getPhoneNumber()),
                                          set("mobileNumber",doctor.getMobileNumber()),
                                          set("email",doctor.getEmail()),
-                                         set("password", Cryptography.encrypt(doctor.getPassword())));
+                                         set("password",Cryptography.encrypt(doctor.getPassword())),
+                                         set("address",doctor.getAddress()));
             doctorCol.updateOne(new BasicDBObject("doctorId",doctor.getDoctorId()),updateProfile);
             return "{\"sended\":true}";
         }
@@ -49,7 +50,8 @@ public class ProfileController {
                                            set("phoneNumber",secretary.getPhoneNumber()),
                                            set("mobileNumber",secretary.getMobileNumber()),
                                            set("email",secretary.getEmail()),
-                                           set("password",Cryptography.encrypt(secretary.getPassword())));
+                                           set("password",Cryptography.encrypt(secretary.getPassword())),
+                                           set("address",secretary.getAddress()));
             secretaryCol.updateOne(new BasicDBObject("secretaryId",secretary.getSecretaryId()),updateSecretary);
             return "{\"sended\":true}";
         }
@@ -60,7 +62,8 @@ public class ProfileController {
                                            set("phoneNumber",radiologist.getPhoneNumber()),
                                            set("mobileNumber",radiologist.getMobileNumber()),
                                            set("email",radiologist.getEmail()),
-                                           set("password",Cryptography.encrypt(radiologist.getPassword())));
+                                           set("password",Cryptography.encrypt(radiologist.getPassword())),
+                                           set("address",radiologist.getAddress()));
             radiologistCol.updateOne(new BasicDBObject("radiologistId",radiologist.getRadiologistId()),updateRadiologist);
             return "{\"sended\":true}";
         }
