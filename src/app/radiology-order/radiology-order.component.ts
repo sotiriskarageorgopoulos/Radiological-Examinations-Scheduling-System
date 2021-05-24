@@ -204,7 +204,6 @@ export class RadiologyOrderComponent implements OnInit {
   }
 
   submitRadOrder() {
-    //Να φτιαξω μια συνθήκη για το handling κενων πεδίων της φορμας
       let {
             radiologyOrderCode,
             sendingDate,

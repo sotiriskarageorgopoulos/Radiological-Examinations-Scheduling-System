@@ -20,6 +20,11 @@
             <a class="profile-choice" routerLink="/profile">Προφίλ</a>
             <a class="logout-choice" (click)="logOut()">Αποσύνδεση</a>
         </div>
+        <div *ngSwitchCase="'ProfileComponent'">
+            <a class="navbar-brand">Σύστημα Ακτινολογικών Εξετάσεων</a>
+            <a class="profile-choice" routerLink="/radiology_order">Αρχική</a>
+            <a class="logout-choice" (click)="logOut()">Αποσύνδεση</a>
+        </div>
         <div *ngSwitchDefault>
             <a class="navbar-brand">Σύστημα Ακτινολογικών Εξετάσεων</a>
         </div>

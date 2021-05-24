@@ -33,6 +33,12 @@ footer {
    margin-top: 40px;
 }
 
+.footer-profile {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
 @media only screen and(max-width:1280px) {
     .footer-title {
         font-size: map-get($font-sizes, "medium")

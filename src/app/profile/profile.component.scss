@@ -1,0 +1,18 @@
+@import '../app.component.scss';
+
+.profile-form {
+    background-color: $clr-grey-9;
+    border: 4px solid $clr-grey-5;
+    border-radius: $radius;
+}
+
+.profile-form-field {
+    width: 50%;
+}
+
+form h1 {
+    color: $clr-grey-2;
+}
+
+
+
