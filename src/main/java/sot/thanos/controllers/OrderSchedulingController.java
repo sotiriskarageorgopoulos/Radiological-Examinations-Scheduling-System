@@ -61,7 +61,7 @@ public class OrderSchedulingController {
         res.type("application/json");
         MongoDatabase db = DBConnection.connectToDB();
         MongoCollection<Document> collection = db.getCollection("RadiologyOrderScheduling");
-        FindIterable<Document> findIterable = collection.find(new BasicDBObject("radiologistId",""));
+        FindIterable<Document> findIterable = collection.find(new BasicDBObject("radiologistId",null));
         MongoCursor<Document> rosCursor = findIterable.iterator();
         Gson gson = new Gson();
         JSONArray ros = new JSONArray();
