@@ -57,6 +57,31 @@ public class OrderSchedulingController {
         return "{\"sended\":true}";
     }
 
+    public static String getScheduledRadiologicalOrders(Request req, Response res) {
+        res.type("application/json");
+        MongoDatabase db = DBConnection.connectToDB();
+        MongoCollection<Document> collection = db.getCollection("RadiologyOrderScheduling");
+        FindIterable<Document> findIterable = collection.find(new BasicDBObject("radiologistId",new BasicDBObject("$ne",null)));
+        MongoCursor<Document> rosCursor = findIterable.iterator();
+        Gson gson = new Gson();
+        JSONArray ros = new JSONArray();
+        while (rosCursor.hasNext()) {
+            Document doc = rosCursor.next();
+            JSONObject obj = new JSONObject();
+            obj.put("radiologyOrderCode",doc.getString("radiologyOrderCode"));
+            obj.put("sendingDate",doc.getDate("sendingDate"));
+            obj.put("justification",doc.getString("justification"));
+            obj.put("radiologicalOperations",gson.fromJson(doc.getString("radiologicalOperations"), ArrayList.class));
+            obj.put("executionDate",doc.getDate("executionDate"));
+            obj.put("priority",doc.getString("priority"));
+            obj.put("radiologistId",doc.getString("radiologistId"));
+            obj.put("patientDetails",doc.get("patientDetails"));
+            obj.put("doctorId",doc.getString("doctorId"));
+            ros.put(obj);
+        }
+        return ros.toString();
+    }
+
     public static String getRadiologicalOrders(Request req,Response res) {
         res.type("application/json");
         MongoDatabase db = DBConnection.connectToDB();

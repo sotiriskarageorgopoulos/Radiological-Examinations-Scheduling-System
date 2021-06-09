@@ -29,6 +29,7 @@ public class Server {
             get("/getRadiologistById/:radiologistId", (req, res) -> RadiologistController.getRadiologistById(req, res));
             get("/getRadiologyOperations", (req, res) -> OrderSchedulingController.getRadiologyOperations(req, res));
             get("/getHospitals", (req, res) -> HospitalController.getHospitals(req, res));
+            get("/getScheduledRadiologicalOrders", (req,res) -> OrderSchedulingController.getScheduledRadiologicalOrders(req,res));
             put("/scheduleRadiologyOrder/:patientCode", (req, res) -> OrderSchedulingController.scheduleRadiologyOrder(req, res));
             put("/updateProfile/:category", (req,res) -> ProfileController.updateProfile(req,res));
             delete("/deleteTheOldAppointments", (req, res) -> OrderSchedulingController.deleteTheOldAppointments(req, res));
