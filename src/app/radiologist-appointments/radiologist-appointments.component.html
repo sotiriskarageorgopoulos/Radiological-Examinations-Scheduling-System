@@ -1,1 +1,23 @@
-<p>radiologist-appointments works!</p>
+<div class="container-fluid mt-3 mb-3">
+    <div class="row d-flex justify-content-center" *ngFor="let r of radiologyOrders">
+        <h2 class="list-headings">Οι ακτινολογικές εντολές σας.</h2>
+        <div class="col-sm-2"></div>
+        <div class="col-sm-3">
+          <p class="list-headings">Κωδικός Ακτινολογικής Εντολής</p>
+          <p class="list-info">{{r?.radiologyOrderCode}}</p>
+        </div>
+        <div class="col-sm-3">
+          <p class="list-headings">Ημερομηνία Εκτέλεσης</p>
+          <p class="list-info">Ημέρα: {{r?.executionDate | date}}</p>
+          <p class="list-info">Ώρα: {{r?.executionDate | slice:11:16}}</p>
+        </div>
+        <div class="col-sm-3">
+          <button mat-raised-button color="primary" routerLink="/radiology_appointment/{{r.radiologyOrderCode}}">Λεπτομέρειες</button>
+        </div>
+        <div class="col-sm-1"></div>
+        <mat-divider></mat-divider>
+    </div>
+    <div *ngIf="radiologyOrders.length === 0 && dataLoaded === true">
+      <p class="empty-rad-orders-text">Δεν υπάρχουν ακτινολογικές εντολές.</p>
+    </div>
+</div>

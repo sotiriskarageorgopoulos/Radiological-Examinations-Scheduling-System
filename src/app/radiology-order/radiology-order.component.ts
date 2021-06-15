@@ -8,6 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { RadiologyOrderService } from '../service/radiology-order-service/radiology-order.service';
 import { RadiologicalOperations } from '../interfaces/radiologicalOperations';
 import { Router } from '@angular/router';
+import { Priority } from '../enums/priority';
 
 @Component({
   selector: 'app-radiology-order',
@@ -36,19 +37,19 @@ export class RadiologyOrderComponent implements OnInit {
   priorities = [
     {
       title:"Κρίσιμη",
-      value:"ΕMERGENT"
+      value: Priority.EMERGENT
     },
     {
       title:"Επείγουσα",
-      value:"URGENT"
+      value: Priority.URGENT
     },
     {
       title:"Σημαντική",
-      value:"SEMI_URGENT"
+      value: Priority.SEMI_URGENT
     },
     {
       title:"Όχι Σημαντική",
-      value:"NON_URGENT"
+      value: Priority.NON_URGENT
     }
   ]
 

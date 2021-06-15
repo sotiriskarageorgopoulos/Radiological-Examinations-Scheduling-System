@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ScheduleRadiologyOrderServiceService } from './schedule-radiology-order-service.service';
+import { ScheduleRadiologyOrderService } from './schedule-radiology-order.service';
 
 describe('ScheduleRadiologyOrderServiceService', () => {
-  let service: ScheduleRadiologyOrderServiceService;
+  let service: ScheduleRadiologyOrderService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ScheduleRadiologyOrderServiceService);
+    service = TestBed.inject(ScheduleRadiologyOrderService);
   });
 
   it('should be created', () => {

@@ -1,0 +1,9 @@
+@import '../app.component';
+
+.rad-info-box {
+    background-color: $clr-grey-7;
+    font-size: map-get($font-sizes, "medium");
+    color: $clr-grey-2;
+    border: 4px inset $clr-grey-9;
+    padding: 2%;
+}

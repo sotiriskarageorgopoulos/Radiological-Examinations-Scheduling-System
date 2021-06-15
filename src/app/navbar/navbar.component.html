@@ -1,32 +1,23 @@
 <nav class="navbar navbar-light bg-navbar ">
     <div [ngSwitch]="nameOfComponent">
-        <div *ngSwitchCase="'RadiologistAppointmentsComponent'">
+        <div *ngSwitchCase="'LoginComponent'">
             <a class="navbar-brand">Σύστημα Ακτινολογικών Εξετάσεων</a>
-            <a class="profile-choice" routerLink="/profile">Προφίλ</a>
-            <a class="logout-choice" (click)="logOut()">Αποσύνδεση</a>
         </div>
-        <div *ngSwitchCase="'ScheduleRadiologyOrderComponent'">
+        <div *ngSwitchCase="'RegisterComponent'">
             <a class="navbar-brand">Σύστημα Ακτινολογικών Εξετάσεων</a>
-            <a class="profile-choice" routerLink="/profile">Προφίλ</a>
-            <a class="logout-choice" (click)="logOut()">Αποσύνδεση</a>
-        </div>
-        <div *ngSwitchCase="'RadiologyOrderComponent'">
-            <a class="navbar-brand">Σύστημα Ακτινολογικών Εξετάσεων</a>
-            <a class="profile-choice" routerLink="/profile">Προφίλ</a>
-            <a class="logout-choice" (click)="logOut()">Αποσύνδεση</a>
-        </div>
-        <div *ngSwitchCase="'RadiologyAppointmentComponent'">
-            <a class="navbar-brand">Σύστημα Ακτινολογικών Εξετάσεων</a>
-            <a class="profile-choice" routerLink="/profile">Προφίλ</a>
-            <a class="logout-choice" (click)="logOut()">Αποσύνδεση</a>
         </div>
         <div *ngSwitchCase="'ProfileComponent'">
             <a class="navbar-brand">Σύστημα Ακτινολογικών Εξετάσεων</a>
-            <a class="profile-choice" routerLink="/radiology_order">Αρχική</a>
+            <a class="profile-choice" (click)="goBack()">Αρχική</a>
             <a class="logout-choice" (click)="logOut()">Αποσύνδεση</a>
+        </div>
+        <div *ngSwitchCase="'Error404Component'">
+            <a class="navbar-brand">Σύστημα Ακτινολογικών Εξετάσεων</a>
         </div>
         <div *ngSwitchDefault>
             <a class="navbar-brand">Σύστημα Ακτινολογικών Εξετάσεων</a>
+            <a class="profile-choice" routerLink="/profile">Προφίλ</a>
+            <a class="logout-choice" (click)="logOut()">Αποσύνδεση</a>
         </div>
     </div>
 

@@ -1,6 +1,6 @@
 export enum Priority {
-    EMERGENT,
-    URGENT,
-    SEMI_URGENT,
-    NON_URGENT
+    EMERGENT = "EMERGENT",
+    URGENT = "URGENT",
+    SEMI_URGENT = "SEMI_URGENT",
+    NON_URGENT = "NON_URGENT"
 }

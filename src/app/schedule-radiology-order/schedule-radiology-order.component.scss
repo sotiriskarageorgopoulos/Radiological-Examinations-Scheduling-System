@@ -1,0 +1,20 @@
+@import '../app.component.scss';
+
+.list-item {
+    padding: 2%;
+    margin: 2%;
+}
+
+.list-headings {
+    color: $clr-grey-5;
+    font-size: map-get($font-sizes, "medium");
+    font-weight: map-get($font-weights, "medium");
+    display: flex;
+    justify-content: center;
+}
+
+.list-info {
+    font-weight: map-get($font-weights, "medium");
+    display: flex;
+    justify-content: center;
+}

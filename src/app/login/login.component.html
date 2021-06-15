@@ -15,6 +15,7 @@
                     <input matInput type="password" formControlName="password">
                     <mat-error *ngIf="checkErrorLoginForm('password', 'required')">Το πεδίο είναι υποχρεωτικό</mat-error>
                 </mat-form-field>
+                <p *ngIf="loginErrorMessage" class="login-error-message">Ο λογαριασμός χρήστη δεν υπάρχει...</p>
                 <a class="mt-2 mb-3 register-link" routerLink="/register">Εγγραφή νέου χρήστη</a>
                 <button mat-raised-button color="primary">Σύνδεση</button>
             </form>

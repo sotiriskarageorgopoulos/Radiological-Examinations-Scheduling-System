@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -16,7 +16,7 @@ import { RegisterService } from './service/register-service/register.service';
 import { RadiologistAppointmentsService } from './service/radiologist-appointments-service/radiologist-appointments.service';
 import { RadiologyOrderService } from './service/radiology-order-service/radiology-order.service';
 import { RadiologyAppointmentService } from './service/radiology-appointment-service/radiology-appointment.service';
-import { ScheduleRadiologyOrderServiceService } from './service/schedule-radiology-order/schedule-radiology-order-service.service';
+import { ScheduleRadiologyOrderService } from './service/schedule-radiology-order/schedule-radiology-order.service';
 import { FooterService } from './service/footer-service/footer-service.service';
 import { routes } from './routes';
 import { HttpClientModule } from '@angular/common/http';
@@ -33,6 +33,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthenticationService } from './service/authentication-service/authentication.service';
 import { ProfileComponent } from './profile/profile.component';
+import { SchedulingCalendarComponent } from './scheduling-calendar/scheduling-calendar.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { ProfileService } from './service/profile-service/profile.service';
+import { SchedulingCalendarService } from './service/scheduling-calendar-service/scheduling-calendar.service';
+import { ScheduleRadiologistComponent } from './schedule-radiologist/schedule-radiologist.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +52,9 @@ import { ProfileComponent } from './profile/profile.component';
     RadiologyAppointmentComponent,
     NavbarComponent,
     FooterComponent,
-    ProfileComponent
+    ProfileComponent,
+    SchedulingCalendarComponent,
+    ScheduleRadiologistComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +69,11 @@ import { ProfileComponent } from './profile/profile.component';
     ReactiveFormsModule,
     MatCheckboxModule,
     NgbModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    })
   ],
   providers: [
     LoginService,
@@ -69,11 +81,15 @@ import { ProfileComponent } from './profile/profile.component';
     RadiologyOrderService,
     RadiologistAppointmentsService,
     RadiologyAppointmentService,
-    ScheduleRadiologyOrderServiceService,
+    ScheduleRadiologyOrderService,
     AuthGuard,
     FooterService,
-    AuthenticationService
-    
+    AuthenticationService,
+    ProfileService,
+    SchedulingCalendarService
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ],
   bootstrap: [AppComponent]
 })

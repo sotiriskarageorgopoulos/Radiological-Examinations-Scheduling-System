@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
     countries: any
     messageForm: FormGroup
     loginForm: FormGroup
+    loginErrorMessage: boolean = false
     
     constructor(private lgs : LoginService, 
                 private fs: FooterService,
@@ -149,6 +150,7 @@ export class LoginComponent implements OnInit {
                 }
                 else {
                     this.as.setIsAuthenticated(false)
+                    this.loginErrorMessage = true
                 }
             })
     }

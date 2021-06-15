@@ -1,1 +1,26 @@
-<p>radiology-appointment works!</p>
+<div class="container-fluid mt-3 mb-3">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 rad-info-box" *ngFor="let r of radiologyOrder">
+            <h2>Πληροφορίες Ακτινολογικής Εξέτασης</h2>
+            <p><b>Κωδικός Ακτινολογικής Εντολής:</b> {{r?.radiologyOrderCode}}</p>
+            <p><b>Ημερομηνία Αποστολής Ακτινολογικής Εντολής:</b> {{r?.sendingDate | date}} </p>
+            <p><b>Ημερομηνία Εκτέλεσης Ακτινολογικής Εντολής:</b> {{r?.executionDate | date}} {{r?.executionDate | slice:11:16}}</p>
+            <p><b>Προτεραιότητα Ακτινολογικής Εντολής:</b> {{r?.priority}}</p>
+            <p><b>Αιτιολογία:</b> {{r?.justification}}</p>
+            <h2>Πληροφορίες Ασθενή</h2>
+            <p><b>Κωδικός Ασθενή:</b> {{r?.patientDetails.patientCode}}</p>
+            <p><b>Όνομα Ασθενή:</b> {{r?.patientDetails.name}}</p>
+            <p><b>Επώνυμο Ασθενή:</b> {{r?.patientDetails.surname}}</p>
+            <p><b>Πατρώνυμο:</b> {{r?.patientDetails.fatherName}}</p>
+            <p><b>Μητρώνυμο:</b> {{r?.patientDetails.motherName}}</p>
+            <p><b>Γένος:</b> {{r?.patientDetails.gender}}</p>
+            <p><b>Ημερομηνία Γέννησης:</b> {{r?.patientDetails.name}}</p>
+            <p><b>Σταθερό Τηλέφωνο:</b> {{r?.patientDetails.phoneNumber}}</p>
+            <p><b>Κινητό Τηλέφωνο:</b> {{r?.patientDetails.mobileNumber}}</p>
+            <p><b>Διεύθυνση:</b> {{r?.patientDetails.address}}</p>
+            <button mat-raised-button color="primary" routerLink="/radiologist_appointments">Επιστροφή</button>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>

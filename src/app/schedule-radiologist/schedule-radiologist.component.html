@@ -1,0 +1,18 @@
+<div class="container-fluid mb-5 mt-4">
+  <h2 class="list-headings">Επιλέξτε ακτινολόγο με βάση τη διαθεσιμότητα του.</h2>
+  <div class="row radiologist-list d-flex justify-content-center" *ngFor="let r of radiologistObj | keyvalue">
+    <div class="col-sm-3 p-3">
+      <p class="list-headings radiologist-list-heading">Κωδικός Ακτινολόγου</p>
+      <p class="list-info">{{r.key}}</p>
+    </div>
+    <div class="col-sm-3 p-3">
+      <p class="list-headings radiologist-list-heading">Πλήθος Εξετάσεων</p>
+      <p class="list-info">{{r.value}}</p>
+    </div>
+    <div class="col-sm-3 p-4 pt-5">
+      <button mat-raised-button color="primary" routerLink="/scheduling_calendar/{{patientCode}}/{{r.key}}">Επιλογή
+        Ακτινολόγου</button>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+</div>

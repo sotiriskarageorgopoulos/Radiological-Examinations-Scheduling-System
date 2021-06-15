@@ -73,6 +73,10 @@ address a {
     }
 }
 
+.login-error-message {
+    color: $clr-red-dark;
+}
+
 @media only screen and ( max-width: 1024px ) {
     .login-img {
         width: 400px;

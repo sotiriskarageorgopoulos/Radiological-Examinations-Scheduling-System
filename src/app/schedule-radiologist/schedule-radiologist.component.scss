@@ -18,15 +18,3 @@
     display: flex;
     justify-content: center;
 }
-
-.empty-rad-orders-text {
-    padding: 2%;
-    margin: 10% auto 0 auto;
-    border: 2px inset $clr-grey-2;
-    border-radius: $radius;
-    color: $clr-grey-5;
-    text-align: center;
-    font-size: map-get($font-sizes, "medium");
-    background-color: $clr-grey-10;
-    width: 50%;
-}

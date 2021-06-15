@@ -1,0 +1,41 @@
+@import "../app.component";
+
+.modal-title,
+.calendar-heading,
+.calendar-day-text {
+    color: $clr-grey-5;
+    font-size: map-get($font-sizes, "medium");
+    font-weight: map-get($font-weights, "medium");
+    display: flex;
+    justify-content: center;
+}
+
+.scheduling-day-btn {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+.scheduling-day-form {
+    border: 3px inset $clr-grey-6;
+    border-radius: $radius;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    padding: 2%
+}
+
+.close {
+    border-radius: 50%;
+    border: 2px solid $clr-red-dark;
+    background-color: $clr-red-dark;
+    color: $clr-grey-10;
+}
+
+.close:hover {
+    background-color: $clr-red-light;
+}
+
+.modal-body {
+    padding: 2%;
+    color: $clr-grey-4;
+}

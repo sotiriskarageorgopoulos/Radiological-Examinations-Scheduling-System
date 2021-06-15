@@ -1,1 +1,27 @@
-<p>schedule-radiology-order works!</p>
+<div class="container-fluid mt-5 mb-5">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <h2 class="d-flex justify-content-center mb-3 list-headings">Ακτινολογικές Εντολές</h2>
+      <div *ngFor="let r of radiologyOrders">
+        <div class="container-fluid">
+          <div class="row list-item">
+            <div class="col-sm-4">
+              <p class="list-headings">Κωδικός Ασθενή</p>
+              <p class="list-info">{{r.patientDetails.patientCode}}</p>
+            </div>
+            <div class="col-sm-4">
+              <p class="list-headings">Προτεραιότητα</p>
+              <p class="list-info">{{r.priority.replace("_"," ")}}</p>
+            </div>
+            <div class="col-sm-4">
+              <button mat-raised-button color="primary" routerLink="/schedule_radiologist/{{r.patientDetails.patientCode}}">Χρονοπρογραμματισμός</button>
+            </div>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>

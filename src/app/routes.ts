@@ -8,6 +8,8 @@ import { RadiologyOrderComponent } from './radiology-order/radiology-order.compo
 import { RadiologyAppointmentComponent } from './radiology-appointment/radiology-appointment.component';
 import { AuthGuard } from '../app/guards/auth.guard';
 import { ProfileComponent } from './profile/profile.component';
+import { SchedulingCalendarComponent } from './scheduling-calendar/scheduling-calendar.component';
+import { ScheduleRadiologistComponent } from './schedule-radiologist/schedule-radiologist.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'login',pathMatch:'full'},
@@ -16,7 +18,9 @@ export const routes: Routes = [
     {path:'radiologist_appointments',component:RadiologistAppointmentsComponent, canActivate:[AuthGuard]},
     {path:'schedule_radiology_order',component:ScheduleRadiologyOrderComponent, canActivate:[AuthGuard]},
     {path:'radiology_order',component:RadiologyOrderComponent, canActivate:[AuthGuard]},
-    {path:'radiology_appointment/:id',component:RadiologyAppointmentComponent, canActivate:[AuthGuard]},
+    {path:'radiology_appointment/:radiologyOrderCode',component:RadiologyAppointmentComponent, canActivate:[AuthGuard]},
+    {path:'scheduling_calendar/:patientCode/:radiologistId',component:SchedulingCalendarComponent, canActivate:[AuthGuard]},
+    {path:'schedule_radiologist/:patientCode',component:ScheduleRadiologistComponent, canActivate:[AuthGuard]},
     {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]},
     {path:'**',component:Error404Component}
 ]
