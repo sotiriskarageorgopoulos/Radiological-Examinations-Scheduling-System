@@ -8,7 +8,7 @@ import {
 import {
   isSameDay,
   isSameMonth,
-  addHours,
+  subHours
 } from 'date-fns';
 import { Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -152,8 +152,8 @@ export class SchedulingCalendarComponent implements OnInit  {
       ...this.events,
       {
         title: eventTitle,
-        start: new Date(startDate),
-        end: addHours(new Date(startDate),1),
+        start: subHours(new Date(startDate),3),
+        end: subHours(new Date(startDate), 2),
         color: colors.yellow,
         draggable: false,
       },
