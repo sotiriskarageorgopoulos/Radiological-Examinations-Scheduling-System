@@ -3,12 +3,12 @@ This API is used for modifying, fetching and sending data to a MongoDB ATLAS dat
 
 Endpoints|Method|Parameters|Description
 ---|---|---|---
-/api/register/:category|POST|category=[string], is reffered to user's category|Registration of a user in the system
-/api/login|POST|-|Connection to the system
-/api/insRadiologicalOrderDetails|POST|-|Saves a radiological command to the database
-/api/sendMessage|POST|-|Saves a user's message to the administrator in the database
+/api/register/:category|POST|category=[string], is reffered to user's category|Registration of a user in the system.
+/api/login|POST|-|Connection to the system.
+/api/insRadiologicalOrderDetails|POST|-|Saves a radiological command to the database.
+/api/sendMessage|POST|-|Saves a user's message to the administrator in the database.
 /api/getRadiologicalOrders|GET|-|A list of all radiological commands.
-/api/getRadiologicalOrdersForRadiologist/:radiologistId|GET|radiologistId=[string], is referred to radologist id| Retrieve a radiologist's radiological instructions from the database
+/api/getRadiologicalOrdersForRadiologist/:radiologistId|GET|radiologistId=[string], is referred to radologist id| Retrieve a radiologist's radiological order from the database.
 /api/sortRadiologistsIdByAvailability|GET|-|Retrieve radiologists sorted in ascending order based on the number of radiological orders they have to perform.
 /api/getRadiologistById/:radiologistId|GET|radiologistId=[string], is referred to radologist id|Retrieve information from a radiologist based on the radiologist ID.
 /api/getRadiologyOperations|GET|-|Fetch all radiological operations.
