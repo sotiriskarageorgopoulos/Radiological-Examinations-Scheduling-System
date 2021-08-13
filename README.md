@@ -1,27 +1,36 @@
 # RadiologySchedulingSystem
+This system is a web app for the scheduling of radiology orders. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
+## Users
 
-## Development server
+The users of this system are:
+- Doctor
+- Radiologist
+- Secretary of Radiology Department
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Functionalities
+- Register in the system.
+- Login. 
+- Show the covid-19 pandemic statistics in homepage.
+- Communication with the administrator via the homepage form.
+- Automatically delete appointments whose date and time have passed.
+### A doctor can:
+- Send a radiological order to the secretary of the radiology department.
+- Change his/her profile details.
+### A secretary can:
+- Select a radiological command from the list of radiological commands.
+- Select a radiologist from the list of radiologists, which presents the radiologist's code and their availability.
+- Select the day the radiological command will be executed on the system log.
+- Change his/her profile details.
+### A radiologist can:
+- See the radiological instructions that concern him.
+- Change his/her profile details.
 
-## Code scaffolding
+## Demo
+[App](https://focused-brattain-a0fb83.netlify.app)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Author 
+**Sotirios Karageorgopoulos**
