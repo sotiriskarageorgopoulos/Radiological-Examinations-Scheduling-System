@@ -26,9 +26,6 @@ The users of this system are:
 - See the radiological instructions that concern him.
 - Change his/her profile details.
 
-## Demo
-[App](https://focused-brattain-a0fb83.netlify.app)
-
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
