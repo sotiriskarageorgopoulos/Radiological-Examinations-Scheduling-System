@@ -87,7 +87,7 @@
             </mat-list>
             <div *ngFor="let d of paginationData">
                 <mat-list class="list-style">
-                    <mat-list-item><img src="{{ d.country }}" class="img-style" width="70" height="40"></mat-list-item>
+                    <mat-list-item>{{ d.country }}</mat-list-item>
                     <mat-list-item>{{ d.cases }}</mat-list-item>
                     <mat-list-item>{{ d.deaths }}</mat-list-item>
                     <mat-list-item>{{ d.recovered }}</mat-list-item>
